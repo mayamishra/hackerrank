@@ -1,0 +1,37 @@
+#include <stdio.h>
+int max(int a,int b)
+{
+    if (a>b)
+    return a;
+    else
+    return b;
+}
+
+int main() {
+	//code
+	int i,sum1,sum2;
+	int arr[5]={2,7,9,3,1};
+	for(i=0;i<5;i++)
+	{
+	    if(i==0)
+	   {
+	       sum1=arr[i];
+	       printf("%d\n",sum1);
+	   }
+	    else if(i==1)
+	    {
+	        sum2=max(arr[i],sum1);
+	        printf("%d\n",sum2);
+	    }
+	    else
+	    {
+	        int temp=sum1;
+	        sum1=sum2;
+	       sum2=max((arr[i]+temp),sum2);
+	       printf("%d\n",sum2);
+	    }
+	}
+	  
+
+	return 0;
+}
